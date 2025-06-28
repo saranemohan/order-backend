@@ -23,11 +23,16 @@ class OrderService {
         delete data.orderValue;
 
         const productData = await orderRepository.createOrder(data);
+        
         if (productData) {
             return this.#productDataFormat(productData)
         } else {
             throw new Error(MESSAGES.PRODUCT_CREATION_FAILED);
         }
+    }
+
+    async getBalance(userId) {
+       return await orderRepository.getBalance(userId);
     }
 }
 

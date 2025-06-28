@@ -1,3 +1,5 @@
+
+import AccountDetails from "../models/account-details.model.js";
 import Order from "../models/order.model.js";
 
 class OrderRepository {
@@ -9,6 +11,11 @@ class OrderRepository {
     async createOrder(data) {
         const OrderDetails = await Order.create(data);
         return OrderDetails;
+    }
+
+    async getBalance(userId) {
+        const accountDetails = await AccountDetails.findOne({user:userId}).sort({ _id: -1 });
+        return accountDetails;
     }
 }
 
