@@ -11,6 +11,12 @@ const addOrder = async (req, res) => {
     try {
         const { security, transactionType, quantity, orderValue } = req.body;
         const createdBy = req.user.id;
+        
+        const accountDetailsData = await orderService.getBalance(createdBy);
+        if(accountDetailsData['balance']<0){
+            throw new Error(MESSAGES.DATA_CREATION_FAILED);
+        }
+
         const appData = await orderService.createOrder({security, transactionType, quantity, orderValue,createdBy});
         if (appData) {
             res.status(200).json({ success: true, data: appData });

@@ -18,7 +18,7 @@ await connectDB();
  */
 app.use(express.json());
 
-// app.use(corsConfig);
+app.use(corsConfig);
 
 logAllRequests(app);
 
