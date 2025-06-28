@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "server": "node index.js",
-    "test": "mocha"
+    "test": "mocha",
+    "seed" : "node seed.js"
   },
   "author": "saran",
   "license": "ISC",
