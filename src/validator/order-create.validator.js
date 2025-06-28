@@ -3,9 +3,8 @@ import { MESSAGES } from '../config/constant.config.js';
 
 const orderCreationValidator = [
 
-    body('securityId')
-        .notEmpty().withMessage(MESSAGES.VALIDATION.REQ.SECURITY)
-        .isNumeric().withMessage(MESSAGES.VALIDATION.FORMAT.SECURITY),
+    body('security')
+        .notEmpty().withMessage(MESSAGES.VALIDATION.REQ.SECURITY),
 
     body('transactionType')
         .notEmpty().withMessage(MESSAGES.VALIDATION.REQ.TYPE),

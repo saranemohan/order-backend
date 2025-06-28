@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const securityDetailsSchema = new mongoose.Schema({
-  name: { type: Number, required: true },
+  name: { type: String, required: true },
   value: { type: Number, required: true }
 },{
   timestamps:true

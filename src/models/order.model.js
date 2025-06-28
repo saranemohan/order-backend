@@ -1,7 +1,10 @@
 import mongoose from 'mongoose';
 
 const orderSchema = new mongoose.Schema({
-  securityId: { type: Number, required: true },
+  security: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'SecurityDetails', 
+  },
   type: { type: String, required: true, enum: ['BUY', 'SELL'] },
   value: { type: Number, required: true },
   quantity: { type: Number, required: true, min: 1 },

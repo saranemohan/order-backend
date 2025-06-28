@@ -7,9 +7,9 @@ await connectDB();
 
 await SecurityDetails.deleteMany({});
 const seedData = [
-    { name: 101, value: 5000 },
-    { name: 102, value: 10000 },
-    { name: 103, value: 7500 }
+    { name: "Google", value: 5000 },
+    { name: "Meta", value: 10000 },
+    { name: "Tesla", value: 7500 }
 ];
 await SecurityDetails.insertMany(seedData);
 

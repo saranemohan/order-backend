@@ -8,7 +8,7 @@ class OrderService {
      * @param {Order} orderData 
      * @returns 
      */
-    #productDataFormat = (order) => _.pick(order, ['_id', 'securityId', 'type', 'value', 'quantity', "createdBy"])
+    #productDataFormat = (order) => _.pick(order, ['_id', 'security', 'type', 'value', 'quantity', "createdBy"])
 
     /**
      * Business logic of create a data

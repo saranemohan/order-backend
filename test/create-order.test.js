@@ -8,7 +8,7 @@ describe('create-order', () => {
             .post('/api/order/create')
             .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWZjZGViZTJlNzcxNWEzOGNjYTAwZiIsImlkZW50aXR5Ijoicm92ZTRAdGVjaGZyaWFyLmNvbSIsImlhdCI6MTc1MTEwOTQ4OSwiZXhwIjoxNzUxMTYzNDg5fQ.jqHJ71qlHeOReYYxBlGXe2pJbe9MImxYLHQAwNhmERU')
             .send({
-                "securityId": "01",
+                "security": "685fd8039b0c10e13cd5edce",
                 "transactionType": "BUY",
                 "quantity": "11",
                 "orderValue": "1000"

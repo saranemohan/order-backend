@@ -9,9 +9,9 @@ import { isGeneralException } from '../utils/commons.js';
  */
 const addOrder = async (req, res) => {
     try {
-        const { securityId, transactionType, quantity, orderValue } = req.body;
+        const { security, transactionType, quantity, orderValue } = req.body;
         const createdBy = req.user.id;
-        const appData = await orderService.createOrder({securityId, transactionType, quantity, orderValue,createdBy});
+        const appData = await orderService.createOrder({security, transactionType, quantity, orderValue,createdBy});
         if (appData) {
             res.status(200).json({ success: true, data: appData });
         } else {
